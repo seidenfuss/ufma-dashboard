@@ -7,7 +7,7 @@ import seaborn as sns
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 
 # Importar dados
-df = pd.read_csv('houses_to_rent_v2.csv', decimal="," )
+df = pd.read_csv('houses_to_rent_v2.csv', decimal=",")
 
 # Traduzir valores (pode ir para outro arquivo, modificar o documento e salvar como csv...)
 df['animal'] = df['animal'].replace('acept', 'Sim')
@@ -18,10 +18,8 @@ df['mobiliado'] = df['mobiliado'].replace('not furnished', 'Não')
 # Título do Dashboard
 st.title("Visão Geral de Aluguéis no Brasil por Cidade")
 
-
 # Caixa de seleção - cidades
 cidade = st.sidebar.selectbox("Cidade", df["cidade"].unique())
-
 
 # Subtítulo I
 st.markdown('### Médias de Valores: '+ cidade)
@@ -75,7 +73,3 @@ with c4:
 st.markdown('### Relação entre Área e Valor Total (Aluguel + Taxas)')
 fig_aluguel_area=px.scatter(df_filtered, x="total (R$)", y="area")
 fig_aluguel_area
-
-
-# RUN
-#streamlit run /home/ananeves/Documents/Github/python_UFMA/dashboard/app.py
