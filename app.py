@@ -70,6 +70,6 @@ with c4:
     fig_mobilia = px.pie(df_filtered, values = df_filtered.groupby("mobiliado")["mobiliado"].count(), names=["Não","Sim"], hole=0.5, template=template)
     fig_mobilia
 
-st.markdown('### Relação entre Área e Valor Total (Aluguel + Taxas)')
-fig_aluguel_area=px.scatter(df_filtered, x="total (R$)", y="area")
-fig_aluguel_area
+#st.markdown('### Relação entre Área e Valor Total (Aluguel + Taxas)')
+#fig_aluguel_area=px.scatter(df_filtered, x="total (R$)", y="area")
+#fig_aluguel_area
