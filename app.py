@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd 
 import plotly_express as px
-import seaborn as sns
 
 # Configuração de página
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
