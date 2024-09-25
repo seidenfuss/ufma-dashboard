@@ -17,3 +17,8 @@ Visualizar medidas de tendência central dos valores de aluguel e taxas, a distr
    * Streamlit: é uma estrutura Python de código aberto para cientistas de dados e engenheiros de IA/ML fornecerem aplicativos de dados interativos – em apenas algumas linhas de código.
    * Pandas: é uma ferramenta de análise e manipulação de dados de código aberto rápida, poderosa, flexível e fácil de usar, construída sobre a linguagem de programação Python.
    * Plotly_express: Plotly Express é uma API concisa, consistente e de alto nível para a criação de figuras.
+
+### Acesse a aplicação: 
+
+https://ufma-esp-aluguel-cidades.streamlit.app/
+
