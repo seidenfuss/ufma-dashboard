@@ -22,8 +22,7 @@ st.title("Visão Geral de Aluguéis no Brasil por Cidade")
 cidade = st.sidebar.selectbox("Cidade", df["cidade"].unique())
 
 
-
-    # Filtro de faixa de aluguel
+# Filtro de faixa de aluguel
 rent_filter = st.sidebar.slider("Selecione a faixa de preço do aluguel", 
                                 min_value=int(df['aluguel (R$)'].min()), 
                                 max_value=int(df['aluguel (R$)'].max()), 
