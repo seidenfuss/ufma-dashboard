@@ -6,7 +6,8 @@ import plotly_express as px
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 
 # Importar dados
-df = pd.read_csv('houses_to_rent_v2.csv', decimal=",")
+#df = pd.read_csv('houses_to_rent_v2.csv', decimal=",")
+df = pd.read_csv('ufma-dashboard/houses_to_rent_v2.csv', decimal=",")
 
 # Traduzir valores (pode ir para outro arquivo, modificar o documento e salvar como csv...)
 df['animal'] = df['animal'].replace('acept', 'Sim')
@@ -20,11 +21,20 @@ st.title("Visão Geral de Aluguéis no Brasil por Cidade")
 # Caixa de seleção - cidades
 cidade = st.sidebar.selectbox("Cidade", df["cidade"].unique())
 
+
+
+    # Filtro de faixa de aluguel
+rent_filter = st.sidebar.slider("Selecione a faixa de preço do aluguel", 
+                                min_value=int(df['aluguel (R$)'].min()), 
+                                max_value=int(df['aluguel (R$)'].max()), 
+                                value=(int(df['aluguel (R$)'].min()), int(df['aluguel (R$)'].max())))
+
+
 # Subtítulo I
 st.markdown('### Médias de Valores: '+ cidade)
 
 #Filtrar dataframe por cidade
-df_filtered = df[df["cidade"] == cidade]
+df_filtered = df[(df["cidade"] == cidade) & df['aluguel (R$)'].between(rent_filter[0], rent_filter[1])]
 
 # Template - estilo
 template = "simple_white"
